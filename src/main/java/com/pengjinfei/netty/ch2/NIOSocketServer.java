@@ -1,4 +1,4 @@
-package com.pengjinfei.netty.ch1;
+package com.pengjinfei.netty.ch2;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -28,10 +28,8 @@ public class NIOSocketServer {
         ByteBuffer msg = ByteBuffer.wrap("Hello!NIO!".getBytes());
         for (; ; ) {
             selector.select();
-
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
-            boolean readed = false;
             while (iterator.hasNext()) {
                 SelectionKey key = iterator.next();
                 iterator.remove();
@@ -39,7 +37,7 @@ public class NIOSocketServer {
                     ServerSocketChannel server = (ServerSocketChannel) key.channel();
                     SocketChannel channel = server.accept();
                     channel.configureBlocking(false);
-                    channel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ, msg.duplicate());
+                    channel.register(selector, SelectionKey.OP_READ);
                     System.out.println("Accepted connection from " + channel);
                 }
                 if (key.isReadable()) {
@@ -54,9 +52,10 @@ public class NIOSocketServer {
                         System.out.print(new String(bytes));
                     }
                     System.out.println();
-                    readed = true;
+                    key.interestOps(key.interestOps() | SelectionKey.OP_WRITE);
+                    key.attach(msg.duplicate());
                 }
-                if (readed && key.isWritable()) {
+                if (key.isWritable()) {
                     SocketChannel channel = (SocketChannel) key.channel();
                     ByteBuffer buffer = (ByteBuffer) key.attachment();
                     while (buffer.hasRemaining()) {

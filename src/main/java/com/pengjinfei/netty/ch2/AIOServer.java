@@ -1,4 +1,4 @@
-package com.pengjinfei.netty.ch1;
+package com.pengjinfei.netty.ch2;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
