@@ -7,7 +7,7 @@ import com.pengjinfei.netty.ch3.TimeClient;
  *
  * @author Pengjinfei
  */
-public class subReqClient {
+public class SubReqClient {
 
     public static void main(String[] args) throws Exception {
         new TimeClient(new SubReqClientInitializer()).connect();
