@@ -1,4 +1,4 @@
-package com.pengjinfei.netty.ch7;
+package com.pengjinfei.netty.ch6;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
