@@ -1,6 +1,6 @@
 package com.pengjinfei.netty.ch4;
 
-import com.pengjinfei.netty.ch3.TimeServer;
+import com.pengjinfei.netty.ch3.NIOServer;
 
 /**
  * Created on 10/6/17
@@ -10,6 +10,6 @@ import com.pengjinfei.netty.ch3.TimeServer;
 public class PacketNotAdhereServer {
 
     public static void main(String[] args) throws Exception {
-        new TimeServer(new PacketNotAdhereServerInitializer()).bind();
+        new NIOServer(new PacketNotAdhereServerInitializer()).bind();
     }
 }

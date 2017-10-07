@@ -1,6 +1,6 @@
 package com.pengjinfei.netty.ch5;
 
-import com.pengjinfei.netty.ch3.TimeServer;
+import com.pengjinfei.netty.ch3.NIOServer;
 
 /**
  * Created on 10/6/17
@@ -10,6 +10,6 @@ import com.pengjinfei.netty.ch3.TimeServer;
 public class FixedServer {
 
     public static void main(String[] args) throws Exception {
-        new TimeServer(new FixedServerInitializer()).bind();
+        new NIOServer(new FixedServerInitializer()).bind();
     }
 }

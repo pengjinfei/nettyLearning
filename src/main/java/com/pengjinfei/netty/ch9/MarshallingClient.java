@@ -1,6 +1,6 @@
 package com.pengjinfei.netty.ch9;
 
-import com.pengjinfei.netty.ch3.TimeClient;
+import com.pengjinfei.netty.ch3.NIOClient;
 
 /**
  * Created on 10/7/17
@@ -10,6 +10,6 @@ import com.pengjinfei.netty.ch3.TimeClient;
 public class MarshallingClient {
 
     public static void main(String[] args) throws Exception {
-        new TimeClient(new MarshallingClientInitializer()).connect();
+        new NIOClient(new MarshallingClientInitializer()).connect();
     }
 }

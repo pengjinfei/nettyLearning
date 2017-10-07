@@ -1,6 +1,6 @@
 package com.pengjinfei.netty.ch6;
 
-import com.pengjinfei.netty.ch3.TimeClient;
+import com.pengjinfei.netty.ch3.NIOClient;
 
 /**
  * Created on 10/7/17
@@ -10,6 +10,6 @@ import com.pengjinfei.netty.ch3.TimeClient;
 public class ProtostuffClient {
 
     public static void main(String[] args) throws Exception {
-        new TimeClient(new ProtostuffClientInitializer()).connect();
+        new NIOClient(new ProtostuffClientInitializer()).connect();
     }
 }

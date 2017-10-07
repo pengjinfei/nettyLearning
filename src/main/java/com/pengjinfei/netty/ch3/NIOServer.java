@@ -15,11 +15,11 @@ import lombok.extern.slf4j.Slf4j;
  * @author Pengjinfei
  */
 @Slf4j
-public class TimeServer {
+public class NIOServer {
 
     private ChannelHandler handler;
 
-    public TimeServer(ChannelHandler handler) {
+    public NIOServer(ChannelHandler handler) {
         this.handler = handler;
     }
 
@@ -45,6 +45,6 @@ public class TimeServer {
     }
 
     public static void main(String[] args) throws Exception {
-        new TimeServer(new TimeServerHandler()).bind();
+        new NIOServer(new TimeServerHandler()).bind();
     }
 }

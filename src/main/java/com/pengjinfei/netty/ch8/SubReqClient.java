@@ -1,6 +1,6 @@
 package com.pengjinfei.netty.ch8;
 
-import com.pengjinfei.netty.ch3.TimeClient;
+import com.pengjinfei.netty.ch3.NIOClient;
 
 /**
  * Created on 10/6/17
@@ -10,6 +10,6 @@ import com.pengjinfei.netty.ch3.TimeClient;
 public class SubReqClient {
 
     public static void main(String[] args) throws Exception {
-        new TimeClient(new SubReqClientInitializer()).connect();
+        new NIOClient(new SubReqClientInitializer()).connect();
     }
 }

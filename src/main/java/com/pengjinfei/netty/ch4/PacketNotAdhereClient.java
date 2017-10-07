@@ -1,6 +1,6 @@
 package com.pengjinfei.netty.ch4;
 
-import com.pengjinfei.netty.ch3.TimeClient;
+import com.pengjinfei.netty.ch3.NIOClient;
 
 /**
  * Created on 10/6/17
@@ -10,6 +10,6 @@ import com.pengjinfei.netty.ch3.TimeClient;
 public class PacketNotAdhereClient {
 
     public static void main(String[] args) throws Exception {
-        new TimeClient(new PacketNotAdhereClientInitializer()).connect();
+        new NIOClient(new PacketNotAdhereClientInitializer()).connect();
     }
 }

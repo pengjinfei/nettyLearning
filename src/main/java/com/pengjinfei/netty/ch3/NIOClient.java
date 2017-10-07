@@ -16,11 +16,11 @@ import lombok.extern.slf4j.Slf4j;
  * @author Pengjinfei
  */
 @Slf4j
-public class TimeClient {
+public class NIOClient {
 
     private ChannelHandler handler;
 
-    public TimeClient(ChannelHandler handler) {
+    public NIOClient(ChannelHandler handler) {
         this.handler = handler;
     }
 
@@ -48,6 +48,6 @@ public class TimeClient {
     }
 
     public static void main(String[] args) throws Exception {
-        new TimeClient(new TimeClientHandler()).connect();
+        new NIOClient(new TimeClientHandler()).connect();
     }
 }
