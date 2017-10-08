@@ -1,8 +1,11 @@
 package com.pengjinfei.netty.ch10.pojo;
 
+import lombok.Data;
+
 /**
  * Address information.
  */
+@Data
 public class Address {
     /** First line of street information (required). */
     private String street1;
@@ -72,15 +75,4 @@ public class Address {
 	this.country = country;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-	return "Address [street1=" + street1 + ", street2=" + street2
-		+ ", city=" + city + ", state=" + state + ", postCode="
-		+ postCode + ", country=" + country + "]";
-    }
 }

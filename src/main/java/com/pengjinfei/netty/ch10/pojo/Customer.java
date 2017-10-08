@@ -1,10 +1,13 @@
 package com.pengjinfei.netty.ch10.pojo;
 
+import lombok.Data;
+
 import java.util.List;
 
 /**
  * Customer information.
  */
+@Data
 public class Customer {
     private long customerNumber;
 

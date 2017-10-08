@@ -1,8 +1,11 @@
 package com.pengjinfei.netty.ch10.pojo;
 
+import lombok.Data;
+
 /**
  * Order information.
  */
+@Data
 public class Order {
 
     private long orderNumber;
@@ -68,18 +71,6 @@ public class Order {
 
     public void setTotal(Float total) {
 	this.total = total;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-	return "Order [orderNumber=" + orderNumber + ", customer=" + customer
-		+ ", billTo=" + billTo + ", shipping=" + shipping.toString()
-		+ ", shipTo=" + shipTo + ", total=" + total + "]";
     }
 
 }

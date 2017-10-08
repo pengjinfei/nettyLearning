@@ -63,7 +63,8 @@ public class HttpJsonServerInitializer extends ChannelInitializer<SocketChannel>
             @Override
             public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
                 log.error("Error occurred.",cause);
-                ctx.close();
+                ctx.writeAndFlush(new HttpJsonResponse(new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST), cause.getMessage()))
+                        .addListener(ChannelFutureListener.CLOSE);
             }
         });
     }
