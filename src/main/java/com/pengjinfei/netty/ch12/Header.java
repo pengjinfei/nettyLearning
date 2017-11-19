@@ -2,6 +2,7 @@ package com.pengjinfei.netty.ch12;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ import java.util.Map;
  * @author Pengjinfei
  */
 @Data
-public class Header {
+public class Header implements Serializable{
     private int crcCode = 0xabef0101;
     private int length;
     private long sessionID;
